@@ -1,5 +1,5 @@
 /*
- * RAX CARFUTBOLÍN — Diagnóstico TSOP38438
+ * RAX RUSH — Diagnóstico TSOP38438
  * 
  * Monitorea pin 7 y reporta CADA cambio de estado por serial.
  * INCLUYE la portadora 38kHz para que el haz IR funcione igual que en el firmware real.

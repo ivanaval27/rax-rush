@@ -1,5 +1,5 @@
 /*
- * RAX CARFUTBOLÍN — Portería A
+ * RAX RUSH — Portería A
  * Arduino Nano V3 + TSOP38438 + LED IR 940nm
  * v2.2 - Optimizado para pelotas rápidas: Pin Change Interrupt + loop sin delays
  */

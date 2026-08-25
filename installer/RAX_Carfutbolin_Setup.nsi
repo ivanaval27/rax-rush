@@ -1,5 +1,5 @@
 ﻿;====================================================
-; RAX Carfutbolín — Instalador NSIS v2.4
+; RAX RUSH — Instalador NSIS v2.4
 ; Wizard: Bienvenida → Licencia → Carpeta → Instalar → Finalizar
 ;====================================================
 
@@ -11,7 +11,7 @@ Unicode true
 ;----------------------------------------------------
 ; DEFINES
 ;----------------------------------------------------
-!define PRODUCT_NAME "RAX Carfutbolín"
+!define PRODUCT_NAME "RAX RUSH"
 !define PRODUCT_VERSION "2.4"
 !define PRODUCT_PUBLISHER "RAX Corp"
 !define PRODUCT_WEB_SITE "https://raxcorp.com"
@@ -49,14 +49,14 @@ BrandingText "RAX Corp"
 !define MUI_UNICON "${ICO_SOURCE}"
 
 ; --- PÁGINA DE BIENVENIDA (texto plano, sin $\r$\n) ---
-!define MUI_WELCOMEPAGE_TITLE "Bienvenido al instalador de RAX Carfutbolín"
-!define MUI_WELCOMEPAGE_TEXT "Este asistente lo guiará en la instalacion de RAX Carfutbolin v${PRODUCT_VERSION}. Sistema de deteccion de goles para futbol de mesa con Arduino Nano. Se recomienda cerrar otras aplicaciones antes de continuar."
+!define MUI_WELCOMEPAGE_TITLE "Bienvenido al instalador de RAX RUSH"
+!define MUI_WELCOMEPAGE_TEXT "Este asistente lo guiará en la instalacion de RAX RUSH v${PRODUCT_VERSION}. Sistema de deteccion de goles para futbol de mesa con Arduino Nano. Se recomienda cerrar otras aplicaciones antes de continuar."
 
 ; --- PAGINA DE FINALIZACION ---
 !define MUI_FINISHPAGE_TITLE "Instalacion completada"
-!define MUI_FINISHPAGE_TEXT "RAX Carfutbolin se instalo correctamente. Se creo un acceso directo en el Escritorio y en el Menu Inicio."
+!define MUI_FINISHPAGE_TEXT "RAX RUSH se instalo correctamente. Se creo un acceso directo en el Escritorio y en el Menu Inicio."
 !define MUI_FINISHPAGE_RUN "$INSTDIR\RAX Carfutbolin.exe"
-!define MUI_FINISHPAGE_RUN_TEXT "Ejecutar RAX Carfutbolín ahora"
+!define MUI_FINISHPAGE_RUN_TEXT "Ejecutar RAX RUSH ahora"
 !define MUI_FINISHPAGE_NOREBOOT_SUPPORT
 
 ; Insertar páginas del wizard (5 páginas visibles)
@@ -78,7 +78,7 @@ BrandingText "RAX Corp"
 ;----------------------------------------------------
 ; SECCIÓN PRINCIPAL
 ;----------------------------------------------------
-Section "RAX Carfutbolín" SEC01
+Section "RAX RUSH" SEC01
     SetOutPath "$INSTDIR"
 
     ; Archivo principal
@@ -95,12 +95,12 @@ Section "RAX Carfutbolín" SEC01
     SetOutPath "$INSTDIR"
 
     ; Acceso directo en Escritorio
-    CreateShortCut "$DESKTOP\RAX Carfutbolín.lnk" "$INSTDIR\RAX Carfutbolin.exe" "" "$INSTDIR\${ICO_SOURCE}"
+    CreateShortCut "$DESKTOP\RAX RUSH.lnk" "$INSTDIR\RAX Carfutbolin.exe" "" "$INSTDIR\${ICO_SOURCE}"
 
     ; Acceso directo en Menú Inicio
-    CreateDirectory "$SMPROGRAMS\RAX Carfutbolín"
-    CreateShortCut "$SMPROGRAMS\RAX Carfutbolín\RAX Carfutbolín.lnk" "$INSTDIR\RAX Carfutbolin.exe" "" "$INSTDIR\${ICO_SOURCE}"
-    CreateShortCut "$SMPROGRAMS\RAX Carfutbolín\Desinstalar RAX Carfutbolín.lnk" "$INSTDIR\uninst.exe"
+    CreateDirectory "$SMPROGRAMS\RAX RUSH"
+    CreateShortCut "$SMPROGRAMS\RAX RUSH\RAX RUSH.lnk" "$INSTDIR\RAX Carfutbolin.exe" "" "$INSTDIR\${ICO_SOURCE}"
+    CreateShortCut "$SMPROGRAMS\RAX RUSH\Desinstalar RAX RUSH.lnk" "$INSTDIR\uninst.exe"
 
     ; Registro
     WriteUninstaller "$INSTDIR\uninst.exe"
@@ -116,16 +116,19 @@ SectionEnd
 ; DESINSTALACIÓN
 ;----------------------------------------------------
 Section "Uninstall"
-    Delete "$DESKTOP\RAX Carfutbolín.lnk"
-    Delete "$SMPROGRAMS\RAX Carfutbolín\RAX Carfutbolín.lnk"
-    Delete "$SMPROGRAMS\RAX Carfutbolín\Desinstalar RAX Carfutbolín.lnk"
-    RMDir "$SMPROGRAMS\RAX Carfutbolín"
+    Delete "$DESKTOP\RAX RUSH.lnk"
+    Delete "$SMPROGRAMS\RAX RUSH\RAX RUSH.lnk"
+    Delete "$SMPROGRAMS\RAX RUSH\Desinstalar RAX RUSH.lnk"
+    RMDir "$SMPROGRAMS\RAX RUSH"
 
     Delete "$INSTDIR\RAX Carfutbolin.exe"
     Delete "$INSTDIR\${ICO_SOURCE}"
+    Delete "$INSTDIR\rush.log"
     Delete "$INSTDIR\carfutbolin.log"
     Delete "$INSTDIR\settings.json"
     RMDir /r "$INSTDIR\sounds"
+    RMDir /r "$LOCALAPPDATA\RAX RUSH"
+    RMDir /r "$LOCALAPPDATA\CarFutbolin"
     RMDir "$INSTDIR"
 
     DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"

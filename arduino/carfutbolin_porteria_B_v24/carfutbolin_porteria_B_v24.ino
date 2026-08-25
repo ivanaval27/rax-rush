@@ -1,5 +1,5 @@
 /*
- * RAX CARFUTBOLÍN — Portería B v2.4.2
+ * RAX RUSH — Portería B v2.4.2
  * Arduino Nano V3 + TSOP38438 + LED IR 940nm
  * 
  * v2.4.2 - Carrier continuo (como v23) + detección debounced con

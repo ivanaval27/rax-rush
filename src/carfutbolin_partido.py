@@ -1,7 +1,7 @@
 """
-RAX Carfutbolín — Sistema de Partido
+RAX RUSH — Sistema de Partido
 v2.0 — Selección de puertos COM, equipos Negro vs Azul
-Compilar: pyinstaller --onefile --windowed --name "CarFutbolin" carfutbolin_partido.py
+Compilar: pyinstaller --onefile --windowed --name "RAX Carfutbolin" carfutbolin_partido.py
 """
 
 import tkinter as tk
@@ -29,10 +29,10 @@ DIR_SOUNDS = os.path.join(DIR_APP, "sounds")
 # Fallback: buscar en instalación de Program Files
 if not os.path.isdir(DIR_SOUNDS):
     DIR_SOUNDS_PROG = os.path.join(os.environ.get("ProgramFiles", "C:\\Program Files"), 
-                                    "RAX Carfutbolín", "sounds")
+                                    "RAX RUSH", "sounds")
     if os.path.isdir(DIR_SOUNDS_PROG):
         DIR_SOUNDS = DIR_SOUNDS_PROG
-DIR_DATA = os.path.join(os.environ.get('LOCALAPPDATA', DIR_APP), "CarFutbolin")
+DIR_DATA = os.path.join(os.environ.get('LOCALAPPDATA', DIR_APP), "RAX RUSH")
 os.makedirs(DIR_DATA, exist_ok=True)
 SETTINGS_FILE = os.path.join(DIR_DATA, "settings.json")
 
@@ -67,14 +67,14 @@ def guardar_settings(puerto_negro="", puerto_azul="", tiempo_juego=4, tiempo_des
         return False
 
 # Logging setup
-log_path = os.path.join(DIR_DATA, 'carfutbolin.log')
+log_path = os.path.join(DIR_DATA, 'rush.log')
 logging.basicConfig(
     filename=log_path,
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
-logging.info("=== CarFutbolin iniciado ===")
+logging.info("=== RAX RUSH iniciado ===")
 
 MINUTOS_PARTIDO = 4
 MINUTOS_DESCANSO = 4
@@ -187,7 +187,7 @@ class LectorSerial(threading.Thread):
 class VentanaConfig:
     def __init__(self):
         self.ventana = tk.Tk()
-        self.ventana.title("CarFutbolin — Configuración")
+        self.ventana.title("RAX RUSH — Configuración")
         self.ventana.configure(bg=COLOR_BG)
         self.ventana.geometry("520x580")
         self.ventana.minsize(520, 580)
@@ -265,7 +265,7 @@ class VentanaConfig:
 
     def _crear_ui(self):
         # Logo / Título
-        tk.Label(self.ventana, text="⚽ RAX CARFUTBOLÍN ⚽",
+        tk.Label(self.ventana, text="⚽ RAX RUSH ⚽",
                  font=("Segoe UI", 22, "bold"), fg=COLOR_AZUL,
                  bg=COLOR_BG).pack(pady=(30, 5))
         tk.Label(self.ventana, text="Configuración de Puertos",
@@ -411,7 +411,7 @@ class AppPartido:
         self.MINUTOS_DESCANSO = minutos_descanso
 
         self.ventana = tk.Tk()
-        self.ventana.title("CarFutbolin")
+        self.ventana.title("RAX RUSH")
         self.ventana.configure(bg=COLOR_BG)
         self.fullscreen = False
         self._saved_geometry = None
@@ -543,7 +543,7 @@ class AppPartido:
         if self.img_logo:
             tk.Label(top_row, image=self.img_logo,
                      bg=COLOR_BG).pack(side="left", padx=(0, 10))
-        tk.Label(top_row, text="RAX CARFUTBOLÍN",
+        tk.Label(top_row, text="RAX RUSH",
                  font=self.fnt_titulo, fg=COLOR_ROJO_RAX, bg=COLOR_BG,
                  anchor="w").pack(side="left")
         
@@ -660,7 +660,7 @@ class AppPartido:
         self.lbl_com_azul.pack(side="right", padx=8)
 
         # Footer
-        tk.Label(left, text="© 2026 CarFutbolin · Todos los derechos reservados · Powered by Iván Nava",
+        tk.Label(left, text="© 2026 RAX RUSH · Todos los derechos reservados · Powered by Iván Nava",
                  font=("Segoe UI", 8), fg="#555", bg=COLOR_BG).pack(side="bottom", pady=2)
 
         # === LADO DERECHO: Historial ===

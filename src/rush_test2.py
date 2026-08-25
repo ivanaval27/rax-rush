@@ -1,5 +1,5 @@
 """
-RAX Carfutbolin - Test lectura serial
+RAX RUSH - Test lectura serial
 """
 import serial, time, sys
 

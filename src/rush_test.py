@@ -1,7 +1,7 @@
 """
-RAX Carfutbolín — Test de lectura serial
+RAX RUSH — Test de lectura serial
 Auto-detecta los Arduinos y muestra ambos en vivo simultáneamente
-Uso: python carfutbolin_test.py
+Uso: python rush_test.py
 """
 
 import serial

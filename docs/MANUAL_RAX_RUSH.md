@@ -1,6 +1,6 @@
-# 🏎️ RAX CARFUTBOLÍN — MANUAL DEL SISTEMA
+# 🏎️ RAX RUSH — MANUAL DEL SISTEMA
 > **Versión:** v2.0+ | **Fecha:** 23/07/2026
-> **Departamento:** Carfutbolín RAX
+> **Departamento:** RAX RUSH
 > **Revisor:** Alan
 
 ---
@@ -38,7 +38,7 @@
 - **Puertos serial:** pyserial
 - **Compilación:** PyInstaller → `RAX Carfutbolin.exe`
 
-### 2.2 Firmware Arduino (`carfutbolin_v21.ino`)
+### 2.2 Firmware Arduino (`carfutbolin_porteria_A_v21.ino`)
 - **Placa:** Arduino Nano (ATmega328P)
 - **Driver:** CH340 (Old Bootloader)
 - **Frecuencia LED IR:** 38kHz (Timer2, OCR2A=51)
@@ -89,7 +89,7 @@
 ```
 RAX Carfutbolin.exe          → App compilada
 carfutbolin_partido.py       → Código fuente
-carfutbolin_v21.ino          → Firmware Arduino (Portería A)
+carfutbolin_porteria_A_v21.ino          → Firmware Arduino (Portería A)
 carfutbolin_porteria_B_v21.ino → Firmware Arduino (Portería B)
 sounds/
   ├── inicio.wav             → Sonido inicio partido
@@ -137,7 +137,7 @@ INICIAR ──→ ⏱ 1er Tiempo (4:00) ──→ 0:00
 - [ ] Verificar estilo RAX Brand Book
 
 ### Firmware Arduino
-- [ ] Revisar `carfutbolin_v21.ino`
+- [ ] Revisar `carfutbolin_porteria_A_v21.ino`
 - [ ] Verificar frecuencia 38kHz (OCR2A=51)
 - [ ] Verificar cooldown 10s
 - [ ] Verificar estabilización 3s al inicio

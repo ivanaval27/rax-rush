@@ -1,5 +1,5 @@
 /*
- * RAX CARFUTBOLÍN — Portería B v2.5
+ * RAX RUSH — Portería B v2.5
  * Arduino Nano V3 + TSOP38438 + LED IR 940nm
  * v2.5 - Detección por flanco (edge detection), loop a máxima velocidad
  *        Sin ISR, sin delays, sin debounce complejo.

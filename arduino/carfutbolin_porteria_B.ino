@@ -1,5 +1,5 @@
 /*
- * RAX CARFUTBOLÍN — Portería B
+ * RAX RUSH — Portería B
  * Arduino Nano V3 + TSOP38438 + LED IR 940nm
  * Protocolo serial: READY:B → GOAL:B a 9600 baud
  *

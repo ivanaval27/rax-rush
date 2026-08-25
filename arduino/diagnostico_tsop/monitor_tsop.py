@@ -1,5 +1,5 @@
 """
-RAX Carfutbolin — Monitor de diagnóstico TSOP
+RAX RUSH — Monitor de diagnóstico TSOP
 Conecta al Arduino, lee los cambios de pin 7 y los muestra en tiempo real.
 """
 import serial
