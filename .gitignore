@@ -1,0 +1,30 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+.env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Build / dist
+build/
+dist/
+*.spec
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backups
+*.bak
+*.bak-*
+
+# Gentle AI local registry
+.atl/
