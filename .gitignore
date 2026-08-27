@@ -28,3 +28,9 @@ dist/
 
 # Gentle AI local registry
 .atl/
+.atl/
+__pycache__/
+*.pyc
+build/
+dist/
+.venv/
